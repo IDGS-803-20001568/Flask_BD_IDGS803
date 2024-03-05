@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+
+    <style>
+        body{
+            padding-top: 0px;
+        }
+
+        .tr-head{
+            background: #dff0d8;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap-responsive.min.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-flxed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="">
+                    IDGS-803
+                </a>
+                <ul class="nav">
+                    <li class="active">
+                        <a href="">
+                            <i class="icon-home icon-white"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="icon-user icon-white"></i>
+                            Alumnos
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        {%with messages = get_flashed_messages()%}
+            {%if messages%}
+                {%for message in messages%}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- <h1>Escuela {{escuela}}</h1>
+
+            {% for nom in alumnos %}
+                <h2>{{nom}}</h2>
+            {% endfor %}
+        
+            <table>
+                <tr>
+                    <td>Dato Prueba</td>
+                    <td>Dato Prueba</td>
+                    <td>Dato Prueba</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+            </table> -->
+
+            {%block content%}
+
+            {%endblock%}
+
+        </div>
+    </div>
+
+    
+
+</body>
+</html>

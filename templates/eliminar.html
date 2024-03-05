@@ -1,0 +1,41 @@
+
+{%extends "layout.html"%}
+
+{%block content%}
+    {% from "_macros.html" import render_field%}
+
+    <center>
+        <div class="container">
+            <div class="row">
+                <form action="/eliminar" name="registro" id="eliminar" method="post">
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 float-label-form-group controls">
+                            {{ render_field(form.id, class="form-control") }}     
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 float-label-form-group controls">
+                            {{ render_field(form.nombre, class="form-control") }}     
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 float-label-form-group controls">
+                            {{ render_field(form.apaterno, class="form-control") }}     
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 float-label-form-group controls">
+                            {{ render_field(form.email, class="form-control") }}     
+                        </div>
+                    </div>
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                    <input type="submit" class="btn btn-danger" id="eliminar" name="eliminar" value="Eliminar">
+
+                    <a href="ABC_Completo" class="btn btn-success">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </center>
+
+
+{%endblock%}
